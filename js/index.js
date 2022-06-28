@@ -751,6 +751,7 @@ window.addEventListener("keydown", (event) => {
 
                     //player attack key 
                     case "f":
+                        player.isBlocking = false
                         setTimeout(() => {
                             attacksounditerator()
                             player.attack()
@@ -758,6 +759,7 @@ window.addEventListener("keydown", (event) => {
                         break
 
                     case "g":
+                        player.isBlocking = false
                         setTimeout(() => {
                             sfx.kickattacksound.play()
                             player.kick()
@@ -795,6 +797,7 @@ window.addEventListener("keydown", (event) => {
 
                     //enemy attack key 
                     case "i":
+                        enemy.isBlocking = false
                         setTimeout(() => {
                             enemy.attack()
                             attacksounditerator()
@@ -802,6 +805,7 @@ window.addEventListener("keydown", (event) => {
 
                         break
                     case "o":
+                        enemy.isBlocking = false
                         setTimeout(() => {
                             enemy.kick()
                             sfx.kickattacksound.play()
