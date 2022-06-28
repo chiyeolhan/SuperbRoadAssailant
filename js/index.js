@@ -278,7 +278,7 @@ const enemy = new Fighter({
             framesMax: 5.9
         },
         walkback: {
-            imagesrc: "./resources/spritesplayer2/ryuwalkbwd.png",
+            imagesrc: "./resources/spritesplayer2/Ryuwalkbwd.png",
             framesMax: 5.9
         },
         jump: {
