@@ -475,6 +475,13 @@ function decreasetimer() {
     }
 }
 
+
+var playerwalkbwdvelocity = -5
+var playerwalkfwdvelocity = 5
+
+var enemywalkbwdvelocity = -5.5
+var enemywalkfwdvelocity = 5.5
+
 //animate player and enemy
 function animate() {
     window.requestAnimationFrame(animate)
@@ -488,14 +495,25 @@ function animate() {
     player.velocity.x = 0
     enemy.velocity.x = 0
 
-    //checks if player is infront of enemy else
+    //player world border
+    if (player.position.x + player.width <= 5) {
+        playerwalkbwdvelocity = 5
+    } else if (player.position.x + player.width >= 1050) {
+        playerwalkfwdvelocity = -5
+    } else {
+        playerwalkfwdvelocity = 5
+        playerwalkbwdvelocity = -5
+    }
+
+    //checks if player is infront of enemy
     if (player.position.x < enemy.position.x) {
+
         //player movement
         if (keys.a.pressed && lastkey === "a") {
-            player.velocity.x = -5
+            player.velocity.x = playerwalkbwdvelocity
             player.switchsprite("walkbwd")
         } else if (keys.d.pressed && lastkey === "d") {
-            player.velocity.x = 5
+            player.velocity.x = playerwalkfwdvelocity
             player.switchsprite("walkfwd")
             player.isBlocking = true
         } else if (!playerhaswon) {
@@ -522,10 +540,10 @@ function animate() {
         //player movement mirrored
         player.ismirrored = true
         if (keys.a.pressed && lastkey === "a") {
-            player.velocity.x = -5
+            player.velocity.x = playerwalkbwdvelocity
             player.switchsprite("walkbwdmirrored")
         } else if (keys.d.pressed && lastkey === "d") {
-            player.velocity.x = 5
+            player.velocity.x = playerwalkfwdvelocity
             player.switchsprite("walkfwdmirrored")
         } else if (!playerhaswon) {
             player.switchsprite("idlemirrored")
@@ -548,14 +566,23 @@ function animate() {
         }
     }
 
+    //enemy world border
+    if (enemy.position.x + enemy.width <= 5) {
+        enemywalkbwdvelocity = 5.5
+    } else if (enemy.position.x + enemy.width >= 1050) {
+        enemywalkfwdvelocity = -5.5
+    } else {
+        enemywalkfwdvelocity = 5.5
+        enemywalkbwdvelocity = -5.5
+    }
 
     if (enemy.position.x > player.position.x) {
         //enemy movement
         if (keys.ArrowLeft.pressed && enemy.lastkey === "ArrowLeft") {
-            enemy.velocity.x = -6
+            enemy.velocity.x = enemywalkbwdvelocity
             enemy.switchsprite("walkfwd")
         } else if (keys.ArrowRight.pressed && enemy.lastkey === "ArrowRight") {
-            enemy.velocity.x = 6
+            enemy.velocity.x = enemywalkfwdvelocity
             enemy.switchsprite("walkbwd")
         } else if (!enemyhaswon) {
             enemy.switchsprite("idle")
@@ -579,10 +606,10 @@ function animate() {
         //enemy movement mirrored
         enemy.ismirrored = true
         if (keys.ArrowLeft.pressed && enemy.lastkey === "ArrowLeft") {
-            enemy.velocity.x = -6
+            enemy.velocity.x = enemywalkbwdvelocity
             enemy.switchsprite("walkfwdmirrored")
         } else if (keys.ArrowRight.pressed && enemy.lastkey === "ArrowRight") {
-            enemy.velocity.x = 6
+            enemy.velocity.x = enemywalkfwdvelocity
             enemy.switchsprite("walkbwdmirrored")
         } else if (!enemyhaswon) {
             enemy.switchsprite("idlemirrored")

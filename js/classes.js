@@ -106,13 +106,15 @@ class Fighter extends Sprite {
     }
 
 
-
     update() {
         this.draw()
         if (!this.dead) { this.animateframes() }
 
         this.attackbox.position.x = this.position.x - this.attackbox.offset.x
         this.attackbox.position.y = this.position.y + this.attackbox.offset.y
+
+        // console.log(this.position.x)
+
 
         c.shadowColor = "black"
         c.shadowBlur = 2
@@ -126,6 +128,7 @@ class Fighter extends Sprite {
         } else {
             this.velocity.y += gravity
         }
+
     }
 
     attack() {
