@@ -1,3 +1,4 @@
+
 //this is the playfield
 const canvas = document.querySelector("canvas")
 const c = canvas.getContext("2d")
@@ -351,7 +352,7 @@ const enemy = new Fighter({
             imagesrc: "./resources/spritesplayer2/mirrored/Ryukick.png",
             framesMax: 5
         },
-        block: {
+        blockmirrored: {
             imagesrc: "./resources/spritesplayer2/mirrored/Ryublock.png",
             framesMax: 1,
         },
