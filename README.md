@@ -1,2 +1,2 @@
 # SuperbRoadAssailant
-street fighter clone in javascript
+All sprites and names are property of capcom.
