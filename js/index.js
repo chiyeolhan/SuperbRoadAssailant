@@ -329,7 +329,7 @@ const enemy = new Fighter({
             framesMax: 5.9
         },
         walkbackmirrored: {
-            imagesrc: "./resources/spritesplayer2/mirrored/ryuwalkbwd.png",
+            imagesrc: "./resources/spritesplayer2/mirrored/Ryuwalkbwd.png",
             framesMax: 6
         },
         jumpmirrored: {
