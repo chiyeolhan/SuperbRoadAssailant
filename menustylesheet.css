@@ -83,16 +83,23 @@
     transition: 0.5s;
     box-shadow: 2px 3px 3px black;
     animation-name: buttonappear;
-    animation-duration: 5s;
+    animation-duration: 4s;
 }
 
 .button:hover {
     font-size: larger;
-    background: linear-gradient(180deg, #640000 0%, #4e1212 45.83%, #850000 76.04%);
+    background: linear-gradient(180deg, #640000 0%, #d32323 45.83%, #850000 76.04%);
     color: white;
     width: 215px;
     height: 45px;
+}
 
+.button:active {
+    font-size: larger;
+    background: linear-gradient(180deg, #640000 0%, #572222 45.83%, #850000 76.04%);
+    color: white;
+    width: 215px;
+    height: 45px;
 }
 
 @keyframes buttonappear {
