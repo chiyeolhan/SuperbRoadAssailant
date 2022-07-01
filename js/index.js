@@ -9,8 +9,6 @@ canvas.style.borderStyle = "solid"
 canvas.style.borderWidth = "4px"
 canvas.style.zIndex = "-1"
 
-//Todo: add world barriers left right top and make canvas scaleable
-
 const gravity = 0.7
 
 const backround = new Sprite({
@@ -482,8 +480,25 @@ var playerwalkfwdvelocity = 5
 var enemywalkbwdvelocity = -5.5
 var enemywalkfwdvelocity = 5.5
 
+var start = null;
+var frames = 0
+
 //animate player and enemy
 function animate() {
+    if (start == null) {
+        start = Date.now()
+    }
+    frames++
+
+    if (frames >= 300) {
+        const end = Date.now()
+        const duration = end - start
+        const fps = frames / (duration / 1000)
+        console.log("FPS: " + fps)
+        frames = 0
+        start = end
+    }
+
     window.requestAnimationFrame(animate)
     c.fillStyle = "black"
     c.fillRect(0, 0, canvas.width, canvas.height)
