@@ -794,18 +794,18 @@ window.addEventListener("keydown", (event) => {
                     //player attack key 
                     case "f":
                         player.isBlocking = false
-                        setTimeout(() => {
-                            attacksounditerator()
-                            player.attack()
-                        }, 100)
+
+                        attacksounditerator()
+                        player.attack()
+
                         break
 
                     case "g":
                         player.isBlocking = false
-                        setTimeout(() => {
-                            sfx.kickattacksound.play()
-                            player.kick()
-                        }, 230)
+
+                        sfx.kickattacksound.play()
+                        player.kick()
+
                         break
 
                     case "h":
@@ -840,18 +840,16 @@ window.addEventListener("keydown", (event) => {
                     //enemy attack key 
                     case "i":
                         enemy.isBlocking = false
-                        setTimeout(() => {
-                            enemy.attack()
-                            attacksounditerator()
-                        }, 100)
+
+                        enemy.attack()
+                        attacksounditerator()
 
                         break
                     case "o":
                         enemy.isBlocking = false
-                        setTimeout(() => {
-                            enemy.kick()
-                            sfx.kickattacksound.play()
-                        }, 230)
+
+                        enemy.kick()
+                        sfx.kickattacksound.play()
 
                         break
                     case "p":
@@ -890,17 +888,17 @@ window.addEventListener("keydown", (event) => {
 
                     //player attack key 
                     case "f":
-                        setTimeout(() => {
-                            attacksounditerator()
-                            player.attackmirrored()
-                        }, 100)
+
+                        attacksounditerator()
+                        player.attackmirrored()
+
                         break
 
                     case "g":
-                        setTimeout(() => {
-                            sfx.kickattacksound.play()
-                            player.kickmirrored()
-                        }, 230)
+
+                        sfx.kickattacksound.play()
+                        player.kickmirrored()
+
                         break
 
                     case "h":
@@ -934,16 +932,14 @@ window.addEventListener("keydown", (event) => {
 
                     //enemy attack key 
                     case "i":
-                        setTimeout(() => {
-                            enemy.attackmirrored()
-                            attacksounditerator()
-                        }, 100)
+
+                        enemy.attackmirrored()
+                        attacksounditerator()
                         break
                     case "o":
-                        setTimeout(() => {
-                            enemy.kickmirrored()
-                            sfx.kickattacksound.play()
-                        }, 230)
+
+                        enemy.kickmirrored()
+                        sfx.kickattacksound.play()
                         break
                     case "p":
                         //powermove function()
