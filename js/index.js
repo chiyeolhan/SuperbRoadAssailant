@@ -791,23 +791,6 @@ window.addEventListener("keydown", (event) => {
                         lastkey = "s"
                         break
 
-                    //player attack key 
-                    case "f":
-                        player.isBlocking = false
-
-                        attacksounditerator()
-                        player.attack()
-
-                        break
-
-                    case "g":
-                        player.isBlocking = false
-
-                        sfx.kickattacksound.play()
-                        player.kick()
-
-                        break
-
                     case "h":
                         //powermove (will implement in the future)
                         break
@@ -929,24 +912,41 @@ window.addEventListener("keydown", (event) => {
                         keys.ArrowDown.pressed = true
                         enemy.lastkey = "ArrowDown"
                         break
-
-                    //enemy attack key 
-                    case "i":
-
-                        enemy.attackmirrored()
-                        attacksounditerator()
-                        break
-                    case "o":
-
-                        enemy.kickmirrored()
-                        sfx.kickattacksound.play()
-                        break
-                    case "p":
-                        //powermove function()
-                        break
                 }
             }
         }
+    }
+})
+
+window.addEventListener("keyup", (event) => {
+    switch (event.key) {
+        //player attack key 
+        case "f":
+            player.isBlocking = false
+
+            attacksounditerator()
+            player.attack()
+
+            break
+
+        case "g":
+            player.isBlocking = false
+
+            sfx.kickattacksound.play()
+            player.kick()
+
+            break
+        //enemy attack key 
+        case "i":
+
+            enemy.attackmirrored()
+            attacksounditerator()
+            break
+        case "o":
+
+            enemy.kickmirrored()
+            sfx.kickattacksound.play()
+            break
     }
 })
 
